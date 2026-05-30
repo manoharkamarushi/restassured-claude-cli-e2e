@@ -44,8 +44,8 @@ public class TestListener implements ITestListener {
     @Override
     public void onTestSkipped(ITestResult result) {
         logger.warn("⊘ Test Skipped: " + result.getMethod().getMethodName());
-        if (result.getSkipCausesByTestClass() != null) {
-            logger.warn("Skip Reason: " + result.getSkipCausesByTestClass());
+        if (result.getThrowable() != null) {
+            logger.warn("Skip Reason: " + result.getThrowable().getMessage());
         }
     }
 
